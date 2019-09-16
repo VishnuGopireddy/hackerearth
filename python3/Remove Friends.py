@@ -52,9 +52,9 @@ class singly:
     def friend_delete(self):
         is_delete = False
         curr = self.head
-        while curr.next.next != None:
+        while curr.next != None:
             if curr.data < curr.next.data:
-                print(self.detete(curr.data))
+                self.detete(curr.data)
                 is_delete = True
                 return
             curr = curr.next
@@ -75,29 +75,20 @@ class singly:
             curr =self.head
             prev = curr
             while curr.next != None:
-                curr = curr.next
                 prev = curr
-            print('->',prev.data,curr.data)
+                curr = curr.next
+
             prev.next = curr.next
             del(curr)
 
-s = singly()
-s.insert(10)
-s.insert(15)
-s.insert(20)
-s.insert(25)
-s.insert(38)
-s.print_list()
-print(s.delete_last())
-print('\n')
-s.print_list()
-'''
-n,k = map(int,input().split())
-arr = list(map(int,input().split()))
-friends = singly()
-for i in arr:
-    friends.insert(i)
+kases = int(input())
+for kase in range(kases):
+    n,k = map(int,input().split())
+    arr = list(map(int,input().split()))
+    friends = singly()
+    for i in arr:
+        friends.insert(i)
 
-friends.delete_friends(k)
-friends.print_list()
-'''
+    friends.delete_friends(k)
+    friends.print_list()
+    print('\n')
