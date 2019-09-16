@@ -49,21 +49,24 @@ class singly:
             del(curr)
             return True
 
-    def friend_delete(self,k):
-        while k > 0:
-            is_delete = False
-            curr = self.head
-            while curr.next.next != None:
-                if curr.data < curr.next.data:
-                    self.detete(curr.data)
-                    is_delete = True
-                    k = k-1
-                    break
-                curr = curr.next
-            if is_delete == False:
-                self.delete_last()
-                k = k-1
-            print('k =',k)
+    def friend_delete(self):
+        is_delete = False
+        curr = self.head
+        while curr.next.next != None:
+            if curr.data < curr.next.data:
+                self.detete(curr.data)
+                is_delete = True
+                return
+            curr = curr.next
+        if is_delete == False:
+            self.delete_last()
+
+    def delete_friends(self,k):
+        while k >= 1:
+            self.friend_delete()
+            print(k)
+            k = k - 1
+
     def delete_last(self):
         if self.head == None:
             return
@@ -93,5 +96,5 @@ friends = singly()
 for i in arr:
     friends.insert(i)
 
-friends.friend_delete(k)
+friends.delete_friends(k)
 friends.print_list()
