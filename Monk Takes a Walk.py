@@ -12,3 +12,4 @@ for i in range(kases):
         if j == 'A' or j == 'E' or j == 'I' or j == 'O' or j == 'U' or j == 'a' or j =='e' or j == 'i' or j == 'o' or j == 'u':
             count_vowels += 1
     print count_vowels
+
