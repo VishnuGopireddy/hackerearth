@@ -47,12 +47,7 @@ class singly:
                 curr = curr.next
             prev.next = curr.next
             return True
-    def delete_last(self):
-        if self.head == None:
-            return
-        else:
-            curr = self.head
-            while
+
     def get_ith(self,i):
         '''
         Return ith item and i +1 th item from list
@@ -75,23 +70,22 @@ s.detete(25)
 s.insert(38)
 s.print_list()'''
 
-#n,k = map(int,input().split())
-#arr = map(int,input().split())
-n,k = 3,1
-arr = [3,100,1]
-friends = singly()
-for i in arr:
-    friends.insert(i)
-while k > 0:
-    delete_friend = False
-    for i in range(n-1):
-        if arr[i] < arr[i+1]:
-            friends.detete(3)
-            arr.pop(i)
-            k = k -1
-            delete_friend = True
-    if delete_friend == False:
+kases = int(input())
+for kase in kases:
+    n,k = map(int,input().split())
+    arr = map(int,input().split())
+    friends = singly()
+    for i in arr:
+        friends.insert(i)
+    while k > 0:
+        delete_friend = False
+        for i in range(n-1-k):
+            if arr[i] < arr[i+1]:
+                friends.detete(3)
+                arr.pop(i)
+                k = k -1
+                delete_friend = True
+        if delete_friend == False:
+            friends.detete(arr[n+k])
 
-
-
-friends.print_list()
+    friends.print_list()
