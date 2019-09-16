@@ -46,20 +46,37 @@ class singly:
                 prev = curr
                 curr = curr.next
             prev.next = curr.next
+            del(curr)
             return True
 
-    def get_ith(self,i):
-        '''
-        Return ith item and i +1 th item from list
-        :param i: index
-        :return: ith and i+1th item
-        '''
+    def friend_delete(self,k):
+        while k > 0:
+            is_delete = False
+            curr = self.head
+            while curr.next.next != None:
+                if curr.data < curr.next.data:
+                    self.detete(curr.data)
+                    is_delete = True
+                    k = k-1
+                    break
+                curr = curr.next
+            if is_delete == False:
+                self.delete_last()
+                k = k-1
+            print('k =',k)
+    def delete_last(self):
         if self.head == None:
-            return None
+            return
+        elif self.head.next == None:
+            self.head = None
         else:
-            pass
-
-
+            curr =self.head
+            prev = curr
+            while curr.next != None:
+                curr = curr.next
+                prev = curr
+            prev.next = curr.next
+            del(prev)
 '''s = singly()
 s.insert(10)
 s.insert(15)
@@ -68,24 +85,13 @@ s.insert(25)
 s.print_list()
 s.detete(25)
 s.insert(38)
-s.print_list()'''
+s.print_list()
+'''
+n,k = map(int,input().split())
+arr = list(map(int,input().split()))
+friends = singly()
+for i in arr:
+    friends.insert(i)
 
-kases = int(input())
-for kase in kases:
-    n,k = map(int,input().split())
-    arr = map(int,input().split())
-    friends = singly()
-    for i in arr:
-        friends.insert(i)
-    while k > 0:
-        delete_friend = False
-        for i in range(n-1-k):
-            if arr[i] < arr[i+1]:
-                friends.detete(3)
-                arr.pop(i)
-                k = k -1
-                delete_friend = True
-        if delete_friend == False:
-            friends.detete(arr[n+k])
-
-    friends.print_list()
+friends.friend_delete(k)
+friends.print_list()
