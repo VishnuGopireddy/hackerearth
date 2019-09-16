@@ -54,12 +54,12 @@ class singly:
         curr = self.head
         while curr.next.next != None:
             if curr.data < curr.next.data:
-                self.detete(curr.data)
+                print(self.detete(curr.data))
                 is_delete = True
                 return
             curr = curr.next
         if is_delete == False:
-            self.delete_last()
+            print(self.delete_last())
 
     def delete_friends(self,k):
         while k >= 1:
