@@ -3,6 +3,8 @@ Python 2.7
 Problem from Hackerearth on Min-Max
 '''
 
+
+
 length = raw_input()
 
 list_number = map(int, raw_input().split()." ")
