@@ -11,6 +11,7 @@ for i in inp:
     else:
         freq[i] += 1
 q = input()
+
 for i in range(q):
     j = raw_input()
     if j not in freq:
