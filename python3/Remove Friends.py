@@ -91,4 +91,5 @@ for kase in range(kases):
 
     friends.delete_friends(k)
     friends.print_list()
+
     print('\n')
