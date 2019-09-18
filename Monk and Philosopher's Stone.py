@@ -1,6 +1,5 @@
 # python 2.6
 #Program on Monk and Philosopher's Stone from HACKER EARTH
-
 a = int(raw_input())
 values = map(int,raw_input().split())
 b = map(int, raw_input().split())
@@ -17,7 +16,6 @@ for i in range(n):
         bag.append(values[j])
         worth = worth + values[j]
         j = j + 1
-
     else:
         worth -= values[bag.pop()]
 print len(bag)
