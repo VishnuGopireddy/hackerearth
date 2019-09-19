@@ -17,6 +17,7 @@ for i in range(n):
         worth = worth + values[j]
         j = j + 1
     else:
+
         worth -= values[bag.pop()]
 print len(bag)
 
