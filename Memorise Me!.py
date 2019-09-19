@@ -1,6 +1,7 @@
 # python 2.6
 #Program on Memorise Me from HACKER EARTH
 
+
 n = input()
 inp = raw_input().split(' ')[:n]
 print inp
@@ -11,7 +12,6 @@ for i in inp:
     else:
         freq[i] += 1
 q = input()
-
 for i in range(q):
     j = raw_input()
     if j not in freq:
