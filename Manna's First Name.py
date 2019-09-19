@@ -8,5 +8,3 @@ for i in range(no_of_words):
     SUVO = word.count('SUVO')
     SUVOJIT = word.count('SUVOJIT')
     print 'SUVO = %d, SUVOJIT = %d ' % (SUVO - SUVOJIT, SUVOJIT)
-
-
