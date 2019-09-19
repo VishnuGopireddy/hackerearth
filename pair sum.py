@@ -8,7 +8,6 @@ arr = [5,1,2,3,4]
 #n,k = map(int,input().split())
 #arr = list(map(int,input().split()))
 sum = 0
-
 i =  0
 j = n-1
 while i < j and arr[i] + arr[j] != k:
