@@ -11,7 +11,6 @@ sum = 0
 
 i =  0
 j = n-1
-
 while i < j and arr[i] + arr[j] != k:
     if arr[i] + arr[j] > k:
         j = j -1
