@@ -1,8 +1,6 @@
 # python 2.6
 #Program on Binary Queries from HACKER EARTH
 
-
-
 b = raw_input().split()
 q = int(b[1])
 arr = raw_input().split()
